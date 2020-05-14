@@ -1,0 +1,114 @@
+.exchange-banner {
+    margin-top: 97px;
+    .container {
+        max-width: 1268px;
+    }
+    &__content {
+        background: 
+        linear-gradient(163.5deg, #7757CE 29.59%, #B295FE 73.59%);
+        min-height: 446px;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: relative;
+        border-radius: 17px;
+        display: flex;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 83.91%;
+            height: 76.46%;
+            top: 98px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: 
+            linear-gradient(165.24deg, #562EC2 29.59%, #A07EFE 73.59%);
+            filter: blur(150px);
+        }
+    }
+    &__image img {
+        position: absolute;
+        max-width: 100%;
+        top: 50%;
+        left: -105px;
+        transform: translateY(-49%);
+        z-index: 10;
+    }
+    &__info {
+        max-width: 467px;
+        position: relative;
+        z-index: 10;
+        margin: 80px 132px 0 auto;
+        h2 {
+            color: #fff;
+            line-height: 132.4%;
+        }
+    }
+    &__text {
+        font-size: 18px;
+        color: #DBD0F9;
+        margin-top: 25px;
+    }
+    &__button {
+        position: relative;
+        color: #9F7DFD;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 40px;
+        width: 225px;
+        height: 69px;
+        border-radius: 10px;
+        background: #EFE8FE;
+        z-index: 10;
+        transition: opacity .3s;
+        span {
+            position: relative;
+            z-index: 15;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 187px;
+            height: 50px;
+            top: 23px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #F9F8FF;
+            filter: blur(45px);
+            transition: opacity .3s;
+        }
+        &:hover {
+            opacity: .9;
+            &::before {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .exchange-banner {
+        &__content {
+            justify-content: center;
+        }
+        &__info {
+            margin-right: 0;
+            margin-left: 0;
+            text-align: center;
+        }
+        &__image img {
+            left: 50%;
+            transform: translate(-49%, -50%);
+        }
+    }
+}
+
+@media(max-width: 321px) {
+    .exchange-banner {
+        &__content {
+            align-items: center;
+        }
+        &__info {
+            margin-top: 0;
+        }
+    }
+}

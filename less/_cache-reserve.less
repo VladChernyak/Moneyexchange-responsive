@@ -1,0 +1,139 @@
+.cache-reserve {
+    margin-top: 142px;
+    .container {
+        max-width: 1149px;
+    }
+    &__content {
+        h2 {
+            text-align: center;
+        }
+    }
+    &__quotes {
+        margin-top: 59px;
+        display: flex;
+        justify-content: space-between;
+        align-items: space-between;
+        flex-wrap: wrap;
+        min-height: 192px;
+    }
+    .quote {
+        width: 230px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 84px;
+        &__icon {
+            width: 52.5px;
+            height: 52.5px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                opacity: .6;
+            }
+            span {
+                opacity: .6;
+                font-family: 'Times New Roman';
+                font-size: 14.8571px;
+            }
+        }
+        &.yandex {
+            .quote__icon {
+                background-color: #FFF7E6;
+            }
+        }
+        &.ethereum {
+            .quote__icon {
+                background-color: #EEF1F9;
+            }
+        }
+        &.bitcoin {
+            .quote__icon {
+                background-color: #FFF9EB;
+            }
+        }
+        &.sberbank {
+            .quote__icon {
+                background-color: #EAF6EB;
+            }
+        }
+        &.privat {
+            .quote__icon {
+                background-color: #F2F7EA;
+            }
+        }
+        &.pay-pal {
+            .quote__icon {
+                background-color: #E6F7FE;
+            }
+        }
+        &.pm {
+            .quote__icon {
+                background-color: #FCEAE9;
+                color: #DA251C;
+            }
+        }
+        &.qiwi {
+            .quote__icon {
+                background-color: #FFF4E6;
+            }
+        }
+        &__info {
+            margin-left: 32px;
+        }
+        &__curency-name {
+            color: #A4AABF;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        &__value {
+            font-size: 20px;
+            color: @dark-title-color;
+        }
+    }
+}
+
+@media(max-width: 949px) {
+    .cache-reserve {
+        &__quotes {
+            justify-content: center;
+        }
+    }
+}
+
+@media(max-width: 489px) {
+    .cache-reserve {
+        &__quotes {
+            margin-left: auto;
+            margin-right: auto;
+            width: 280px;
+            height: 280px;
+            overflow-y: auto;
+            &-wrapper {
+                position: relative;
+                &::before {
+                    content: '\2228';
+                    position: absolute;
+                    font-size: 25px;
+                    font-weight: 700;
+                    color: @light-title-color;
+                    bottom: 5px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: margin .1s linear;
+                    animation: arrowMove 2s linear infinite;
+                    opacity: .7;
+                }
+            }
+        }
+        .quote {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+@keyframes arrowMove {
+    50% {
+        transform: translateX(-50%) translateY(5px);
+    }
+}

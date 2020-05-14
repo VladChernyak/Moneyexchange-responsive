@@ -1,0 +1,149 @@
+.reviews {
+    max-width: 1270px;
+    margin: 80px auto 0 auto;
+    overflow: hidden;
+    padding-bottom: 10px;
+    .container {
+        max-width: 1140px;
+    }
+    &__carousel {
+        margin-top: 115px;
+        &-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        &-item {
+            max-width: 490px;
+        }
+        &-arrow {
+            border: none;
+            background: none;
+            outline: none;
+            background-color: @arrow-color;
+            width: 71px;
+            position: relative;
+            height: 2px;
+            transition: all .3s;
+            cursor: pointer;
+            &:not(.disabled):hover {
+                background-color: lighten(@arrow-color, 10%);
+            }
+            &::before,
+            &::after {
+                    content: '';
+                    position: absolute;
+                    width: 13px;
+                    height: 2px;
+                    border-radius: 5px;
+                    background-color: inherit;
+            }
+            &.disabled {
+                width: 36px;
+                background-color: @arrow-disabled-color;
+                &::before,
+                &::after {
+                    background-color: @arrow-disabled-color;
+                }
+            }
+        }
+        &-controls {
+            float: right;
+            margin-top: 48px;
+            .arrow-left {
+                margin-right: 23px;
+                &::before {
+                    left: -1px;
+                    top: -4px;
+                    transform: rotate(-40deg);
+                }
+                &::after {
+                    left: -1px;
+                    bottom: -4px;
+                    transform: rotate(40deg);
+                }
+            }
+            .arrow-right {
+                &::before {
+                    right: -1px;
+                    top: -4px;
+                    transform: rotate(40deg);
+                }
+                &::after {
+                    right: -1px;
+                    bottom: -4px;
+                    transform: rotate(-40deg);
+                }
+            }
+        }
+    }
+    .review {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 210px;
+        justify-content: flex-start;
+        &::before {
+            content: '';
+            width: 212px;
+            height: 213px;
+            position: absolute;
+            left: -115px;
+            top: -70px;
+            background: url(../img/svg/rewiews/rewiews-bg-figure.png) no-repeat center / contain;
+        }
+        &__text {
+            font-size: 18px;
+            color: #848BA9;
+            line-height: 166%;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 5;
+        }
+        &__info {
+            display: flex;
+            align-items: center;
+            margin-top: auto;
+        }
+        &__author {
+            font-size: 20px;
+            color: @dark-title-color;
+        }
+        &__date {
+            font-size: 14px;
+            color: #838BA8;
+            margin-left: 30px;
+        }
+    }
+    // Owl-carousel custom styles
+    .owl-stage-outer {
+        overflow: initial;
+    }
+    .owl-item {
+        opacity: 0;
+        transition: opacity .3s;
+    }
+    .owl-item.active {
+        opacity: 1;
+    }
+}
+
+@media(max-width: 768px) {
+    .reviews__content h2 {
+        text-align: center;
+    }
+    .reviews__carousel-item {
+        margin: 0 auto;
+    }
+}
+
+@media(max-width: 321px) {
+    .rewiew__text {
+        font-size: 14px;
+    }
+    .rewiew__author {
+        font-size: 16px;
+    }
+    .rewiew__date {
+        font-size: 12px;
+    }
+}
